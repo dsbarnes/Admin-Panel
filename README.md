@@ -3,15 +3,15 @@
 Node Admin Panel is a small project for managing a JSON file, that is to be used
 as a mock database, for a front end applications.
 
-This one is spcifically desigend to accopany the personal_website repository
+This one is specifically designed to accompany the mock_blog repository
 found [here](https://github.com/dsbarnes/personal_website).
 
 ## Installation
 
 Clone this repository to your local machine.  
 Navigate into the **server** directory and run `yarn install`  
-Once insallted, run `node server.js`  
-Ther server should now be running locally on port `4000`.
+Once installed, run `node server.js`  
+The server should now be running locally on port `4000`.
 
 If you would like to change anything, you can run `nodemon server.js`  
 Nodemon will listen for changes and restart the server each time the codebase is updated.
