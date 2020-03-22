@@ -26,13 +26,15 @@ Once the front end is up an running, simply fill out the form and submit.
 
 Notes: 
 1. The ID is automatically calculated and cannot be manually changed 
+2. The ID will **NOT** update when you submit, a new JSON file will be created called "articles_new.json"
+3. If the user wants to add more than one article, the new JSON file must be renamed to "articles.json" and the old articles.json will need to be removed (or renamed to keep a backup)
 (bar altering the codebase)  
-2. The `code` blocks that the user can add are not auto formatted (yet). One will need to manually type in `\t` to tab in lines of code.
+4. The `code` blocks that the user can add are not auto formatted (yet). One will need to manually type in `\t` to tab in lines of code.
 
 Upon submission, navigate to the data directory, and notice a file called
-`article_new.json` has been created.  
+`articles_new.json` has been created.  
 This file should be identical to the previous JSON file, except it also includes
-data you just filled out on the front end, as the newest entry.
+data you just filled out on the front end, as the newest entry.  
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
