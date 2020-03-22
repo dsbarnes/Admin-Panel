@@ -1,0 +1,26 @@
+h1{ 
+  text-align: right; 
+  margin-right: 32px;
+}
+
+div.container{
+  margin-left:auto;
+  margin-right:auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+div div{ margin-top:16px; }
+div.container label{ padding: 0px 32px 0px 4px; }
+input.textInput{ width: 98%; }
+
+div.container textarea{ width: 98%; }
+div.container button{ height: 32px; }
+button#submit{ width: 200%; }
+
+div#addElements p { margin: 16px 0px 0px; }
+div#addElements textarea { 
+  width: 199%;
+  height: 125px;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AppCss from './App.css'
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
   const blockHelper = (type) => {
     const count = document.querySelectorAll('.content').length
     const form = document.getElementById('addElements')
-    const text = document.createElement('span')
+    const text = document.createElement('p')
     const block = document.createElement('textarea')
     const lineBreak = document.createElement('br')
 
@@ -73,7 +74,7 @@ function App() {
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(jsonData)
+      body: JSON.stringify([...jsonData, newContent])
     })
   }
 
@@ -82,60 +83,80 @@ function App() {
       <h1> dsbarnes -- blog admin </h1>
       <hr />
 
-      <p>ID: {id}</p>
+      <div className='container'>
+        <p>ID:</p>
+        <div>{id}</div>
 
-      <p>Featured?
-        <input
-          type="radio"
-          name="featured"
-          onClick={() => setFeatured(true)}
-          checked={featured}
-        /><label>True</label>
+        <p>Featured:</p>
+        <div>
+          <input
+            type="radio"
+            name="featured"
+            onClick={() => setFeatured(true)}
+            checked={featured}
+          /><label>True</label>
 
-        <input
-          type="radio"
-          name="featured"
-          onClick={() => setFeatured(false)}
-          checked={!featured}
-        /><label>False</label>
-      </p>
+          <input
+            type="radio"
+            name="featured"
+            onClick={() => setFeatured(false)}
+            checked={!featured}
+          /><label>False</label>
+        </div>
 
-      <p>Category:
-        <select onChange={(e) => setCategory(e.target.value)}>
-          <option>JavaScript</option>
-          <option>Python</option>
-          <option>Katas</option>
-          <option>env</option>
-        </select>
-      </p>
+        <p>Category:</p>
+        <div>
+          <select onChange={(e) => setCategory(e.target.value)}>
+            <option>JavaScript</option>
+            <option>Python</option>
+            <option>Katas</option>
+            <option>ENV</option>
+            <option>CSharp</option>
+            <option>Rust</option>
+          </select>
+        </div>
 
-      <p>Title: <input
-        type="text"
-        onChange={(e) => setTitle(e.target.value)}
-      /></p>
+        <p>Title:</p>
+        <div>
+          <input className='textInput'
+            type="text"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
 
-      <p>IN THIS FORMAT: 10-10-1010</p>
-      <p>date: <input
-        type='text'
-        onChange={(e) => setDate(e.target.value)}
-      ></input></p>
+        <p>Date:</p>
+        <div>
+          <input className='textInput'
+            type='text'
+            onChange={(e) => setDate(e.target.value)}
+          ></input>
+        </div>
 
-      <p>MUST BE A LINK</p>
-      <p>video: <input
-        type='text'
-        onChange={(e) => setVideo(e.target.value)}
-      ></input></p>
+        <p>Video:</p>
+        <div>
+          <input className='textInput'
+            type='text'
+            onChange={(e) => setVideo(e.target.value)}
+          ></input>
+        </div>
 
-      <p>short: <textarea onChange={(e) => setShort(e.target.value)} /></p>
+        <p>Short:</p>
+        <div>
+          <textarea onChange={(e) => setShort(e.target.value)} />
+        </div>
 
-      <button onClick={handleAddTextBlock}>Add Text Block</button>
-      <button onClick={handleAddCodeBlock}>Add Code Block</button>
+      </div>
 
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div id="addElements"></div>
+      <div className='container'>
+        <button onClick={handleAddTextBlock}>Add Text Block</button>
+        <button onClick={handleAddCodeBlock}>Add Code Block</button>
 
-        <button>Submit</button>
-      </form>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div id="addElements"></div>
+
+          <button id='submit'>Submit</button>
+        </form>
+      </div>
     </React.Fragment>
   );
 }
