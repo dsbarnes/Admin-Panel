@@ -213,24 +213,21 @@
   },
   {
     "id": 7,
-    "featured": false,
-    "category": "env",
-    "title": "hello work",
-    "date": "99-99-9999",
-    "video": "VIDEO LINK",
-    "short": "SHORT",
+    "featured": true,
+    "category": "Python",
+    "title": "one",
+    "date": "one",
+    "video": "one",
+    "short": "one",
     "content": [
       {
-        "text": "fdfsdfdsafs"
+        "text": "on"
       },
       {
-        "text": "342423432"
+        "code": "tw"
       },
       {
-        "code": "gfdgdfhfgdhg"
-      },
-      {
-        "text": "423423"
+        "text": "on"
       }
     ]
   }
