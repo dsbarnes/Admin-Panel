@@ -42,7 +42,7 @@ function App() {
     const block = document.createElement('textarea')
     const lineBreak = document.createElement('br')
 
-    text.innerHTML = type
+    text.innerHTML = type[0].toUpperCase() + type.slice(1)
     block.classList.add(type, 'content')
     block.dataset.position = count
     block.addEventListener('keypress', (e) => handleContentInput(e))
@@ -153,7 +153,6 @@ function App() {
 
         <form onSubmit={(e) => handleSubmit(e)}>
           <div id="addElements"></div>
-
           <button id='submit'>Submit</button>
         </form>
       </div>
